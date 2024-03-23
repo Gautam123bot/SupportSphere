@@ -1,9 +1,9 @@
 
 @import "../../vars.css";
 
-*{
+/* *{
   color: black;
-}
+} */
 .container {
   position: relative;
   display: flex;
@@ -19,22 +19,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: var(--color-text);
+  /* color: var(--color-text); */
   z-index: 1;
 }
 
 .title {
-  font-size: 72px;
+  font-size: 42px;
   font-weight: 900;
   margin-bottom: 33px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(
+  /* font-family: var(--font-roboto); */
+  /* background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 70%,
     rgba(255, 255, 255, 0) 120%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  ); */
+  /* -webkit-text-fill-color: transparent; */
+  /* -webkit-background-clip: text; */
+  color: black;
 }
 
 .description {
@@ -45,17 +46,17 @@
 
 .contactBtn {
   text-decoration: none;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
   color: var(--color-text);
   border-radius: 100px;
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
 .heroImg {
-  width: 50%;
+  width: 40%;
   z-index: 1;
 
   animation-name: floating;
@@ -77,7 +78,7 @@
 }
 
 .topBlur {
-  position: absolute;
+  /* position: absolute;
   width: 50vw;
   height: 50vw;
   min-width: 350px;
@@ -86,23 +87,23 @@
   left: -10vw;
   color: black;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   filter: blur(100px);
-  z-index: 0;
+  z-index: 0; */
 }
 
 .bottomBlur {
-  position: absolute;
+  /* position: absolute;
   width: 70vw;
   height: 50vw;
   min-width: 350px;
-  min-width: 250px;
-  top: 246px;
-  right: -25vw;
-  border-radius: 764px;
+  min-width: 250px; */
+  /* top: 246px;
+  right: -25vw; */
+  /* border-radius: 764px; */
   /* background: rgba(25, 55, 109, 0.7); */
   /* filter: blur(100px); */
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 @media screen and (max-width: 830px) {
