@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h2 className={styles.title}>Bring your cakertaker directly on your doorstep</h2>
+        <h2 className={styles.title}>Bring your cakertaker directly on your </h2>
         <p className={styles.description}>
           {/* I'm a full-stack developer with 5 years of experience using React and
           NodeJS. Reach out if you'd like to learn more! */}
