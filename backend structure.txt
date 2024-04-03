@@ -1,0 +1,20 @@
+register as customer - 	1. full name
+			2. address
+			3. gender
+			4. email
+			5. phone
+			6. password
+
+login as customer - 	1. phone
+			2. password		
+
+call for service - 	1. choose for service
+			2. Name
+			3. phone
+
+register as serviceman - 	1. choose your expertise
+				2. full name
+				3. address
+				4. previous experience
+				5. phone
+				6. email
