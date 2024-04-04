@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from 'react-router-dom';
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -9,7 +9,8 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
-        MaidMyDay
+        {/* MaidMyDay */}
+        <img src={getImageUrl("images/logo.png")} alt="" />
       </a>
       <div className={styles.menu}>
         <img
@@ -37,6 +38,10 @@ export const Navbar = () => {
           </li>
           <li>
             <a href="#about">Contact</a>
+          </li>
+          <li>
+            {/* <a href="#signup">Register</a> */}
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </div>
