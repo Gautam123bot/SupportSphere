@@ -1,0 +1,9 @@
+input{
+    background-color: red;
+}
+textarea{
+    background-color: rebeccapurple;
+}
+select, option{
+    background-color: blueviolet;
+}

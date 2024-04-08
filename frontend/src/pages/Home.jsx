@@ -7,6 +7,7 @@ import { Hero } from '../components/Hero/Hero'
 import { Navbar } from '../components/Navbar/Navbar'
 import { Projects } from '../components/Projects/Projects'
 import Faqs from '../components/FAQS/Faqs'
+import Reg_service from '../components/Reg_servicemen/Reg_service'
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       {/* <About /> */}
       {/* <Experience /> */}
       <Projects />
+      <Reg_service />
       <Faqs />
       <Footer />
     </div>

@@ -6,7 +6,11 @@ register as customer - 	1. full name
 			6. password
 
 login as customer - 	1. phone
-			2. password		
+			2. password	
+
+
+
+	
 
 call for service - 	1. choose for service
 			2. Name

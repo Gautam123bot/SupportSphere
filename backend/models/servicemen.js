@@ -1,6 +1,6 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const serviceManSchema  = new mongoose.Schema({
     firstname: {
         type: String,
         required: true,
@@ -16,7 +16,6 @@ const userSchema = new mongoose.Schema({
     },
     chooseExpertise: {
         type: String,
-        required: true,
         default: null,
     },
     previous_experience: {
@@ -36,15 +35,16 @@ const userSchema = new mongoose.Schema({
         unique: true,
         lowercase: true,
         trim: true,
-        validate: [validator.isEmail, 'Please provide a valid email address']
     },
     address: {
         type: String,
         default: null,
         required: true,
-    },
-})
+    }, 
+},{
+    timestamps: true,
+});
 
-const User = mongoose.model('User', userSchema);
- 
-module.exports = User;
+const ServiceMan  = mongoose.model('ServiceMan', serviceManSchema);
+
+export default ServiceMan;

@@ -8,6 +8,8 @@ import { Projects } from "./components/Projects/Projects";
 import Faqs from "./components/FAQS/Faqs"
 import Home from "./pages/Home";
 import Register from "./pages/Register"
+import Getwork from "./pages/Getwork";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,6 +31,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/getwork" element={<Getwork />} />
             </Routes>
         </Router>
 

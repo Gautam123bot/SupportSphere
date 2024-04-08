@@ -1,14 +1,16 @@
 import firebase from "firebase/compat/app"
 import "firebase/compat/firestore"
+import dotenv from 'dotenv';
+// dotenv.config();
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCjIdwdPGVxwKkyzuFsTf7VgaI5E5QezhE",
-    authDomain: "care-taker-d5f69.firebaseapp.com",
-    projectId: "care-taker-d5f69",
-    storageBucket: "care-taker-d5f69.appspot.com",
-    messagingSenderId: "638947744368",
-    appId: "1:638947744368:web:fe385c051b1756ee3972b5",
-    measurementId: "G-LVMX9E47XS"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
   };
 
 const app = firebase.initializeApp(firebaseConfig)
