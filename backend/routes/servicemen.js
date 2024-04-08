@@ -1,6 +1,6 @@
 import ServiceMan from "../models/servicemen.js";
 import express from "express"
-import { sendSMS } from "./sms.js";
+// import { sendSMS } from "./sms.js";
 
 const router = express.Router();
 
