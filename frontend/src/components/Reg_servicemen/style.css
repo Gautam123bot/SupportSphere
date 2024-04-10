@@ -1,0 +1,15 @@
+.serviceman_reg{
+    background-color: rgb(22, 152, 152);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 250px;
+    margin-top: 200px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.main_regis{
+    background-color: rgb(232, 255, 255);
+}

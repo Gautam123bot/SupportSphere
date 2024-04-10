@@ -1,8 +1,10 @@
 import ServiceMan from "../models/servicemen.js";
 import express from "express"
+import { mailchimp } from "./mailchimpConfig.js";
 // import { sendSMS } from "./sms.js";
 
 const router = express.Router();
+router.use(express.json());
 
 router.post("/", async(req, res) => {
     try {

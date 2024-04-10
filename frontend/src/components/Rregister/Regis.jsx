@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import {doc, addDoc, collection, updateDoc, deleteDoc, getDoc} from 'firebase/firestore'
 import { db } from '../../firebase';
+import "./style.css"
 
 function Regis() {
   const[name, setName] = useState('')

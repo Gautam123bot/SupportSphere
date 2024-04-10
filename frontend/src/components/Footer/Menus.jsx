@@ -8,7 +8,8 @@ export const PRODUCTS = [
     { name: "Use cases", link: "#" },
     { name: "Blog", link: "#" },
     { name: "Online evenet", link: "#" },
-    { name: "Nostrud exercitation", link: "#" },
+    { name: "link1", link: "#" },
+    { name: "link2", link: "#" },
   ];
   export const COMPANY = [
     { name: "Diversity & inclusion", link: "#" },

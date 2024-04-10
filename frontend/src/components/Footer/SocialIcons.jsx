@@ -1,9 +1,10 @@
 import React from "react";
+import { getImageUrl } from "../../utils";
 
 const SocialIcons = ({ Icons }) => {
   return (
-    <div className="text-teal-500">
-      {Icons.map((icon) => (
+    <div className="text-teal-500 size-7 flex w-full justify-center">
+      {/* {Icons.map((icon) => (
         <span
           key={icon.name}
           className="p-2 cursor-pointer inline-flex items-center
@@ -12,7 +13,11 @@ const SocialIcons = ({ Icons }) => {
         >
           <ion-icon name={icon.name}></ion-icon>
         </span>
-      ))}
+      ))} */}
+      <img className="mx-2" src={getImageUrl("images/insta.png")} alt="" />
+      <img className="rounded-lg mx-2" src={getImageUrl("images/twitter.png")} alt="" />
+      <img className="mx-2" src={getImageUrl("images/telegram.jpg")} alt="" />
+      <img className="rounded-lg mx-2" src={getImageUrl("images/linkedin.png")} alt="" />
     </div>
   );
 };
