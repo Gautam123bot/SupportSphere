@@ -1,4 +1,4 @@
-export const PORT = 3000;
+export const PORT = 3001;
 
 export const mongoDBURL = 
 process.env.DBURL

@@ -2,7 +2,7 @@ import express from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import servicemenRouter from "./routes/servicemen.js"; 
-import subscribeRouter from "./routes/subscribeRouter.js"
+import userRoute from "./routes/userRoute.js"
 import cors from 'cors';
 import connectMongoDb from './connection.js';
 // import twilioRouter from "./routes/servicemen.js"
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/service', servicemenRouter);
-app.use("/subscribe", subscribeRouter)
+app.use("/api", userRoute);
 // app.use("/sms", twilioRouter)
 
 // MongoDB Connection

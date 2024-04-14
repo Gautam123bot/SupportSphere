@@ -42,7 +42,7 @@ export const Navbar = () => {
           </li>
           <li>
             {/* <a href="#signup">Register</a> */}
-            <Link to="/register">Register</Link>
+            <Link to="/register">FirestoreDB</Link>
           </li>
         </ul>
       </div>

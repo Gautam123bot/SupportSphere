@@ -14,9 +14,55 @@ function Getwork() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [verificationResult, setVerificationResult] = useState("");
+  const [verificationSuccess, setVerificationSuccess] = useState(false);
 
   const navigate = useNavigate();
+
+  const handleSendOtp = () => {
+    axios
+      .post("http://localhost:3001/api/send-otp", { phone })
+      .then(() => {
+        setOtpSent(true);
+        setVerificationResult(""); // Reset verification result
+        setVerificationSuccess(false); // Reset verification success
+        alert("OTP sent successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("An error occured while sending OTP. Please try again later!");
+      });
+  };
+
+  const handleVerifyOtp = () => {
+    axios
+      .post("http://localhost:3001/api/verify-otp", { phone, otp })
+      .then((response) => {
+        console.log("Response from server:", response.data);
+        if (response.data.success) {
+          setVerificationSuccess(true);
+          setVerificationResult("OTP Verified Successfully!");
+        } else {
+          setVerificationResult(response.data.msg);
+          setVerificationSuccess(false); // Update verification success
+        }
+      })
+      .catch((error) => {
+        console.error("Error verifying OTP:", error);
+        setVerificationResult(
+          "An error occurred while verifying OTP. Please try again later."
+        );
+      });
+  };
+
   const handleServiceman = () => {
+    if (!verificationSuccess) {
+      alert("Please verify your OTP before submitting your form");
+      return;
+    }
+
     const data = {
       firstname: fname,
       lastname: lname,
@@ -28,13 +74,14 @@ function Getwork() {
       address,
     };
     axios
-      .post("http://localhost:3000/service", data)
+      .post("http://localhost:3001/service", data)
       .then(() => {
         navigate("/");
+        alert("You registered successfully! We'll get back to you soon");
       })
       .catch((error) => {
-        alert("An error happened. Please try again later");
         console.log(error);
+        alert("An error happened. Please try again later");
       });
   };
 
@@ -49,7 +96,9 @@ function Getwork() {
           id="fname"
           value={fname}
           onChange={(e) => setFname(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
         <h2>Lname: </h2>
         <input
           type="text"
@@ -57,7 +106,9 @@ function Getwork() {
           id="lname"
           value={lname}
           onChange={(e) => setLname(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
         <h2>Age(in years): </h2>
         <input
           type="number"
@@ -65,7 +116,9 @@ function Getwork() {
           id="age"
           value={age}
           onChange={(e) => setAge(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
         <h2>Select your expertise</h2>
         <select
           name="expertise"
@@ -77,10 +130,14 @@ function Getwork() {
           <option value="" disabled>
             Select your expertise
           </option>
-          <option value="workingstaff">Working Staff</option>
-          <option value="maid">Maid</option>
-          <option value="salesman">Salesman</option>
-        </select><br /><br />
+          <option value="shopstaff">Shop or Outlet Staff</option>
+          <option value="hospital Staff">Hospital Staff</option>
+          <option value="labsupport">Lab Support</option>
+          <option value="schoolstaff">School Staff</option>
+          <option value="others">Others</option>
+        </select>
+        <br />
+        <br />
         <h2>Previous Experience</h2>
         <input
           type="number"
@@ -88,7 +145,9 @@ function Getwork() {
           id="prevexperience"
           value={prevexperience}
           onChange={(e) => setPrevexperience(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
         <h2>Phone Number: </h2>
         <input
           type="text"
@@ -96,7 +155,43 @@ function Getwork() {
           id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
+
+        <button type="button" className="" onClick={handleSendOtp}>
+          {otpSent ? "Resend OTP" : "Send OTP"}
+        </button>
+        {otpSent && (
+          <>
+            <h2>Enter OTP sent to your phone: </h2>
+            <input
+              type="text"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
+            <br />
+            <br />
+            <button onClick={handleVerifyOtp}>Verify OTP</button>
+            <p>{verificationResult}</p>
+          </>
+        )}
+
+        {/* {!otpSent && (
+          <button type="button" className="buttonsub" onClick={handleSendOtp}>
+            Send OTP
+          </button>
+        )}
+
+        {otpSent && (
+          <>
+            <h2>Enter OTP sent to your phone: </h2>
+            <input type="text" name="otp" id="otp" value={otp} onChange={(e) => setOtp(e.target.value)} /> <br /><br />
+          </>
+        )}
+         <button className="buttonsub" onClick={handleVerifyOtp}>Verify OTP</button>
+        <p>{verificationResult}</p> */}
+
         <h2>Email: </h2>
         <input
           type="email"
@@ -104,7 +199,9 @@ function Getwork() {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><br /><br />
+        />
+        <br />
+        <br />
         <h2>Address: </h2>
         <textarea
           name="address"
@@ -113,10 +210,14 @@ function Getwork() {
           // rows="50"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-        ></textarea><br /><br />
+        ></textarea>
+        <br />
+        <br />
         <button type="submit" className="buttonsub" onClick={handleServiceman}>
           Submit your form
-        </button><br /><br />
+        </button>
+        <br />
+        <br />
       </div>
       <Footer />
     </div>

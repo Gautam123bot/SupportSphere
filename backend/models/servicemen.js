@@ -26,13 +26,21 @@ const serviceManSchema  = new mongoose.Schema({
     phone: {
         type: Number,
         default: null,
-        unique: true,
         required: true,
+    },
+    otp:{
+        type: String,
+        // required: true,
+    },
+    otpExpiration:{
+        type: Date, // 2024-01-24 // yyyy-mm-dd
+        default: Date.now,
+        get: (otpExpiration) => otpExpiration.getTime(),
+        set: (otpExpiration) => new Date(otpExpiration)
     },
     email: {
         type: String, 
         default: null,
-        unique: true,
         lowercase: true,
         trim: true,
     },

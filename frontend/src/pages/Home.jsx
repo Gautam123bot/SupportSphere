@@ -12,7 +12,7 @@ function Home() {
     <div className={styles.App}>
       <Navbar />
       <Hero />
-      <Projects />
+      {/* <Projects /> */}
       <Reg_service />
       <Faqs />
       <Footer />

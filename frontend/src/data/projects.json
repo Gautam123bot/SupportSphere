@@ -1,6 +1,6 @@
 [
   {
-    "title": "House maid",
+    "title": "Staff for your shop",
     "imageSrc": "projects/house_maid.jpg",
     "description": "This is a project made to learn the latest languages by building an app.",
     "skills": ["React", "Express", "Node"],
@@ -8,7 +8,7 @@
     "Click here to view more": "https://www.github.com"
   },
   {
-    "title": "Cook",
+    "title": "Staff for Hospitals",
     "imageSrc": "projects/cook.jpg",
     "description": "This is a project made to learn the latest languages by building an app.",
     "skills": ["React", "Express", "Node", "Sass"],
@@ -16,7 +16,7 @@
     "Click here to view more": "https://www.github.com"
   },
   {
-    "title": "Store staff",
+    "title": "Lab Support",
     "imageSrc": "projects/storestaff.jpg",
     "description": "This is a project made to learn the latest languages by building an app.",
     "skills": ["React", "Express", "Node"],
@@ -24,7 +24,7 @@
     "Click here to view more": "https://www.github.com"
   },
   {
-    "title": "Caretaker",
+    "title": "School Staff",
     "imageSrc": "projects/caretaker.jpg",
     "description": "This is a project made to learn the latest languages by building an app.",
     "skills": ["React", "Express", "Node"],

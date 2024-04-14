@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import {doc, addDoc, collection, updateDoc, deleteDoc, getDoc} from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import "./style.css"
 
@@ -7,15 +8,20 @@ function Regis() {
   const[name, setName] = useState('')
   const[email, setEmail] = useState('')
   const[phone, setPhone] = useState('')
+  const navigate = useNavigate();
 
   const dbref = collection(db, "care-taker")
   const registeruser = async()=>{
     const adddata = await addDoc(dbref, {Name: name, Email: email, Phone: phone})
     if(adddata){
-      alert("Registered successfully")
+      const confirmbut = confirm("Please check your details carefully");
+      if(confirmbut){
+        alert("Registered successfully")
+      }
     }else{
       alert("Error Occured while proceeding your request")
     }
+    navigate("/");
   }
 
   return (
