@@ -2,6 +2,8 @@ import express from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import servicemenRouter from "./routes/servicemen.js"; 
+import bookingRouter from "./routes/booking.js"
+import emailRoute from "./routes/emailRoute.js"
 import userRoute from "./routes/userRoute.js"
 import cors from 'cors';
 import connectMongoDb from './connection.js';
@@ -33,6 +35,8 @@ app.get('/', (req, res) => {
 
 app.use('/service', servicemenRouter);
 app.use("/api", userRoute);
+app.use("/booked", bookingRouter);
+app.use("/mailed", emailRoute);
 // app.use("/sms", twilioRouter)
 
 // MongoDB Connection

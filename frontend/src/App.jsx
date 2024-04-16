@@ -8,6 +8,12 @@ import Home from "./pages/Home";
 import Register from "./pages/Register"
 import Getwork from "./pages/Getwork";
 import Signup from "./pages/Signup"
+import Getstaff from "./pages/Getstaff";
+import Getstaffh from "./pages/Getstaffh"
+import GetstaffL from "./pages/GetstaffL"
+import Getstaffm from "./pages/Getstaffm"
+import Getstaffo from "./pages/Getstaffo"
+import GetstaffS from "./pages/GetstaffS"
 
 import {
   BrowserRouter as Router,
@@ -25,6 +31,13 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/getwork" element={<Getwork />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/getstaff" element={<Getstaff />} />
+                <Route path="/getstaffh" element={<Getstaffh />} />
+                <Route path="/getstaffL" element={<GetstaffL />} />
+                <Route path="/getstaffm" element={<Getstaffm />} />
+                <Route path="/getstaffo" element={<Getstaffo />} />
+                <Route path="/getstaffS" element={<GetstaffS />} />
+
             </Routes>
         </Router>
 

@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemsContainer from "./ItemsContainer";
 import SocialIcons from "./SocialIcons";
 import { Icons } from "./Menus";
+import axios from "axios"
+
 
 function Footer() {
+
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Make a POST request to the server-side endpoint
+      const response = await axios.post('http://localhost:3001/mailed', { email });
+      alert("You Subscribed successfully!")
+      console.log(response.data.message);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+    }
+  };
+
   return (
     <footer className="bg-white text-black">
       <div className="md:flex md:justify-between md:items-center sm:px-8 px-4 bg-[#ffffff19] py-7">
@@ -16,15 +34,19 @@ function Footer() {
         <div>
           <input
             type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter Your Email Id"
             className="text-white bg-black
            sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
           />
           <button
+            type="submit"
+            onClick={handleSubmit}
             className="bg-teal-400 hover:bg-teal-500 duration-300 px-5 py-2.5 font-[Poppins]
            rounded-md text-white md:w-auto w-full"
           >
-            Request Code
+            Subscribe
           </button>
         </div>
       </div>
