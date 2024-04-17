@@ -4,9 +4,11 @@ import Selectservice_h from "../components/Booking_details/Selectservice_h"
 import Time from '../components/Booking_details/Time';
 import { useState } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 function Getstaffh() {
+  const navigate = useNavigate();
     const [page, setPage] = useState(0);
     const [data, setData] = useState({
       services: '',
@@ -52,7 +54,7 @@ function Getstaffh() {
   
     }
   
-    const titles = ["User Info", "Personal Info", "More Info"];
+    const titles = ["Give your requirements", "Timing of your work", "Contact Info"];
   
     const PageDisplay = () => {
       if (page === 0) {
@@ -69,6 +71,7 @@ function Getstaffh() {
         <div>
         </div>
         <div className='sm:mx-auto sm:w-full sm:max-w-md'>
+            <h1 className='p-4 underline text-center text-cyan-950 text-xl'>Get your Medical Staff here</h1>
            {/* <img className='mx-auto h-24 w-auto' src={logo} alt="/" /> */}
            <h1 className='mt-6 text-center text-3xl font-bold tracking-tight text-gray-900'>
             {titles[page]}

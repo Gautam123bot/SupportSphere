@@ -4,8 +4,10 @@ import Selectservice_o from "../components/Booking_details/Selectservice_o"
 import Time from '../components/Booking_details/Time';
 import { useState } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Getstaffo() {
+  const navigate = useNavigate();
     const [page, setPage] = useState(0);
     const [data, setData] = useState({
       services: '',
@@ -51,7 +53,7 @@ function Getstaffo() {
   
     }
   
-    const titles = ["User Info", "Personal Info", "More Info"];
+    const titles = ["Give your requirements", "Timing of your work", "Contact Info"];
   
     const PageDisplay = () => {
       if (page === 0) {
@@ -69,6 +71,7 @@ function Getstaffo() {
         </div>
         <div className='sm:mx-auto sm:w-full sm:max-w-md'>
            {/* <img className='mx-auto h-24 w-auto' src={logo} alt="/" /> */}
+           <h1 className='p-4 underline text-center text-cyan-950 text-xl'>What's next???</h1>
            <h1 className='mt-6 text-center text-3xl font-bold tracking-tight text-gray-900'>
             {titles[page]}
            </h1>
