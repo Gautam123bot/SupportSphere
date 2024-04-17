@@ -18,7 +18,7 @@ export const Navbar = () => {
           src={
             menuOpen
               ? getImageUrl("nav/close.png")
-              : getImageUrl("nav/menu.png")
+              : getImageUrl("nav/menu1.png")
           }
           alt="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -27,20 +27,20 @@ export const Navbar = () => {
           className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
           onClick={() => setMenuOpen(false)}
         >
-          <li>
-            <a href="#about">About</a>
+          <li className="px-5 py-2 hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+            <a href="#">About</a>
           </li>
-          <li>
-            <a href="#experience">Experience</a>
+          <li className="px-5 py-2 hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+            <a href="#">Experience</a>
           </li>
-          <li>
-            <a href="#projects">Projects</a>
+          <li className="px-5 py-2 hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+            <a href="#">Projects</a>
           </li>
-          <li>
+          <li className="px-5 py-2 hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             {/* <a href="#about">Contact</a> */}
             <Link to="/signup">Signup</Link>
           </li>
-          <li>
+          <li className="px-5 py-2 hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             {/* <a href="#signup">Register</a> */}
             <Link to="/register">FirestoreDB</Link>
           </li>

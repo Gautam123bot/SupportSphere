@@ -5,6 +5,8 @@ import Time from '../components/Booking_details/Time';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
+import {Navbar} from "../components/Navbar/Navbar"
+import Footer from "../components/Footer/Footer"
 
 function Getstaff() {
   const navigate = useNavigate();
@@ -67,9 +69,9 @@ function Getstaff() {
   } 
 
   return (
-    <div className='bg-gradient-to-r from-slate-100 to-red-600 w-full h-screen min-h-full flex flex-col justify-center py-36 sm:px-6 lg:px-8 z-100 mf:h-screen'>
       <div>
-      </div>
+      <Navbar />
+    <div className='bg-cyan-400 w-full h-screen min-h-full flex flex-col justify-center py-36 sm:px-6 lg:px-8 z-100 mf:h-screen'>
       <div className='sm:mx-auto sm:w-full sm:max-w-md'>
          {/* <img className='mx-auto h-24 w-auto' src={logo} alt="/" /> */}
          <h1 className='p-4 underline text-center text-cyan-950 text-xl'>Get your Store Staff here</h1>
@@ -86,7 +88,7 @@ function Getstaff() {
           onClick={() => {
             setPage((currPage) => currPage - 1)
           }}
-          className='flex cursor-pointer w-full justify-center rounded-md border border-transparent bg-[#BF202F] py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+          className='flex cursor-pointer w-full justify-center rounded-md border border-transparent bg-[#20babf] py-2 px-4 text-sm font-medium text-white hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
             Prev</button>
           <button 
            onClick={(e) => {
@@ -98,11 +100,13 @@ function Getstaff() {
                 setPage((currPage) => currPage + 1)
               }
            }}
-          className='flex cursor-pointer w-full justify-center rounded-md border border-transparent bg-[#BF202F] py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+          className='flex cursor-pointer w-full justify-center rounded-md border border-transparent bg-[#146b6e] py-2 px-4 text-sm font-medium text-white hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
             {page === titles.length - 1 ? "Submit" : "Next"}</button>
         </div>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   )
 }

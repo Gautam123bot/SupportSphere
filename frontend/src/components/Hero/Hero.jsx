@@ -7,13 +7,12 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h2 className={styles.title}>Bring your cakertaker directly on your doorstep</h2>
+        <h2 className={styles.title}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquam molestiae possimus tempora</h2>
         <p className={styles.description}>
-          {/* I'm a full-stack developer with 5 years of experience using React and
-          NodeJS. Reach out if you'd like to learn more! */}
+          {/* lorem30 */}
         </p>
         <a href="mailto:myemail@email.com" className={styles.contactBtn}>
-          Contact Me
+          {/* Contact Me */}
         </a>
       </div>
       <img

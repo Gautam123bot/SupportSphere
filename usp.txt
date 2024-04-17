@@ -10,3 +10,5 @@ problem:
 
 mythings:
 1. get extra attire for your workplace
+
+if you work for more than 1 year then get an extra mobile phone from organization

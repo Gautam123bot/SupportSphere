@@ -4,6 +4,7 @@ import "./style.css";
 import axios from "axios";
 import "./getwor.css";
 import Footer from "../components/Footer/Footer";
+import { Navbar } from "../components/Navbar/Navbar";
 
 function Getwork() {
   const [fname, setFname] = useState("");
@@ -87,7 +88,8 @@ function Getwork() {
 
   return (
     <div className="">
-      <div className="main_get">
+      <Navbar />
+      <div className="main_get text-center mt-6">
         {/* this is register page of service */}
         <h2>Fname: </h2>
         <input
@@ -213,7 +215,7 @@ function Getwork() {
         ></textarea>
         <br />
         <br />
-        <button type="submit" className="buttonsub" onClick={handleServiceman}>
+        <button type="submit" className="buttonsub rounded-xl px-10 py-3 bg-cyan-600 hover:bg-cyan-900 hover:text-white" onClick={handleServiceman}>
           Submit your form
         </button>
         <br />

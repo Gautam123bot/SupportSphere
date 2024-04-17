@@ -7,6 +7,7 @@ import { Navbar } from '../components/Navbar/Navbar'
 import Faqs from '../components/FAQS/Faqs'
 import Reg_service from '../components/Reg_servicemen/Reg_service'
 import Allservice from '../components/Services/Allservice'
+import Feedbackcr from '../components/Carousel_feedback/Feedbackcr'
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       {/* <Projects /> */}
       <Reg_service />
       <Allservice />
+      <Feedbackcr />
       <Faqs />
       <Footer />
     </div>
