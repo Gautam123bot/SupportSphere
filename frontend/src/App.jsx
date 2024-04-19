@@ -15,7 +15,10 @@ import Getstaffm from "./pages/Getstaffm"
 import Getstaffo from "./pages/Getstaffo"
 import GetstaffS from "./pages/GetstaffS"
 import Marquee from "./components/Marquee";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 14901ec0dfc2e3a696f263d89d83e5b9249c9f70
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,7 +28,11 @@ import {
 function App() {
   return (
     <div className={styles.App}>
+<<<<<<< HEAD
       <Marquee />
+=======
+        
+>>>>>>> 14901ec0dfc2e3a696f263d89d83e5b9249c9f70
       <Router>
             <Routes>
                 <Route exact path="/" element={<Home />} />
