@@ -8,6 +8,7 @@ import Faqs from '../components/FAQS/Faqs'
 import Reg_service from '../components/Reg_servicemen/Reg_service'
 import Allservice from '../components/Services/Allservice'
 import Feedbackcr from '../components/Carousel_feedback/Feedbackcr'
+import Full from '../components/Whychooseus/Full'
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       {/* <Projects /> */}
       <Reg_service />
       <Allservice />
+      <Full />
       <Feedbackcr />
       <Faqs />
       <Footer />
