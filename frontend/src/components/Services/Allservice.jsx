@@ -4,7 +4,7 @@ import Mainservice from './Mainservice'
 function Allservice() {
   return (
     <> 
-    <div className="flex flex-wrap xl:px-60 justify-center">
+    <div className="flex xl:px-100 justify-between items-center">
       <div className="lg:p-10">
         <Mainservice
           title="Staff for your shop"

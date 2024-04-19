@@ -14,6 +14,7 @@ import GetstaffL from "./pages/GetstaffL"
 import Getstaffm from "./pages/Getstaffm"
 import Getstaffo from "./pages/Getstaffo"
 import GetstaffS from "./pages/GetstaffS"
+import Marquee from "./components/Marquee";
 
 import {
   BrowserRouter as Router,
@@ -24,7 +25,7 @@ import {
 function App() {
   return (
     <div className={styles.App}>
-
+      <Marquee />
       <Router>
             <Routes>
                 <Route exact path="/" element={<Home />} />
