@@ -9,12 +9,14 @@ import Reg_service from '../components/Reg_servicemen/Reg_service'
 import Allservice from '../components/Services/Allservice'
 import Feedbackcr from '../components/Carousel_feedback/Feedbackcr'
 import Full from '../components/Whychooseus/Full'
+import Marquee from '../components/Marquee'
 
 function Home() {
   return (
     <div className={styles.App}>
       <Navbar />
       <Hero />
+      <Marquee />
       {/* <Projects /> */}
       <Reg_service />
       <Allservice />
