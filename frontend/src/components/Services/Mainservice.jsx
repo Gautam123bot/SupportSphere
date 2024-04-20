@@ -2,11 +2,11 @@ import React from 'react';
 import { getImageUrl } from "../../utils";
 import { Link } from 'react-router-dom';
 
-function Mainservice({ title, description, buttonText, link }) {
+function Mainservice({ nimg, title, description, buttonText, link }) {
   return (
     <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-1 gap-8 justify-items-center">
       <a href="#">
-        <img className="rounded-t-lg w-full" src={getImageUrl("projects/storestaff.jpg")} alt={title} />
+        <img className="rounded-t-lg w-full" src={nimg} alt={title} />
       </a>
       <div className="p-5">
         <a href="#" className="block">

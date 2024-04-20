@@ -29,14 +29,7 @@ function Feedbackcr() {
               />
             </div>
             <h3 className="col-span-2">
-              FIRST SLIDE Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Beatae, error repellat! Atque sapiente est odit quidem
-              rerum, beatae accusantium nihil, minus sed quam vitae expedita
-              similique! Delectus suscipit eos, voluptas odit consequatur veniam
-              quaerat eaque soluta autem doloremque, harum a! Lorem ipsum dolor,
-              sit amet consectetur adipisicing elit. Explicabo obcaecati magnam
-              non repellendus sapiente ratione rem iure molestiae possimus
-              dolorem.
+            SupportSphere has been a game-changer for me as a rural migrant seeking job opportunities in urban areas. With their platform, I've been able to overcome the challenges of finding work that aligns with my skills and experience. SupportSphere efficiently connects me with suitable job opportunities, making the job search process much smoother and less frustrating.
             </h3>
           </div>
           <div className="xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 gap-4 items-center inside-contain">
@@ -48,14 +41,7 @@ function Feedbackcr() {
               />
             </div>
             <h3 className="col-span-2">
-              FIRST SLIDE Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Beatae, error repellat! Atque sapiente est odit quidem
-              rerum, beatae accusantium nihil, minus sed quam vitae expedita
-              similique! Delectus suscipit eos, voluptas odit consequatur veniam
-              quaerat eaque soluta autem doloremque, harum a! Lorem ipsum dolor,
-              sit amet consectetur adipisicing elit. Explicabo obcaecati magnam
-              non repellendus sapiente ratione rem iure molestiae possimus
-              dolorem.
+            "Thanks to SupportSphere, my transition from a rural to an urban setting has been much easier in terms of finding employment. Their platform understands the unique challenges faced by individuals like me and provides tailored solutions. I no longer struggle to find job openings that recognize and utilize my capabilities, all thanks to SupportSphere."
             </h3>
           </div>
           <div className="xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 gap-4 items-center inside-contain">
@@ -67,14 +53,7 @@ function Feedbackcr() {
               />
             </div>
             <h3 className="col-span-2">
-              FIRST SLIDE Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Beatae, error repellat! Atque sapiente est odit quidem
-              rerum, beatae accusantium nihil, minus sed quam vitae expedita
-              similique! Delectus suscipit eos, voluptas odit consequatur veniam
-              quaerat eaque soluta autem doloremque, harum a! Lorem ipsum dolor,
-              sit amet consectetur adipisicing elit. Explicabo obcaecati magnam
-              non repellendus sapiente ratione rem iure molestiae possimus
-              dolorem.
+            SupportSphere has been a lifesaver for me during my job search journey after relocating from a rural area to an urban center. Their platform not only understands the hurdles I face but also actively works to connect me with job opportunities that value my skills. I'm grateful to have found a service like SupportSphere that empowers rural migrants like me to find meaningful work in urban areas."
             </h3>
           </div>
           <div className="xl:grid xl:grid-cols-3 lg:grid lg:grid-cols-3 md:grid md:grid-cols-3 gap-4 items-center inside-contain">
@@ -86,14 +65,7 @@ function Feedbackcr() {
               />
             </div>
             <h3 className="col-span-2">
-              FIRST SLIDE Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Beatae, error repellat! Atque sapiente est odit quidem
-              rerum, beatae accusantium nihil, minus sed quam vitae expedita
-              similique! Delectus suscipit eos, voluptas odit consequatur veniam
-              quaerat eaque soluta autem doloremque, harum a! Lorem ipsum dolor,
-              sit amet consectetur adipisicing elit. Explicabo obcaecati magnam
-              non repellendus sapiente ratione rem iure molestiae possimus
-              dolorem.
+            "Thanks to SupportSphere, my transition to urban living has been much smoother, especially in terms of finding employment. Their platform addresses the gap between rural migrants and job opportunities in urban areas by providing a space where our skills are recognized and appreciated. SupportSphere is truly a beacon of hope for individuals like me seeking fulfilling work."
             </h3>
           </div>
           

@@ -10,6 +10,7 @@ import Allservice from '../components/Services/Allservice'
 import Feedbackcr from '../components/Carousel_feedback/Feedbackcr'
 import Full from '../components/Whychooseus/Full'
 import Marquee from '../components/Marquee'
+import Complainbox from '../components/Complainbx/Complainbox'
 
 function Home() {
   return (
@@ -18,10 +19,11 @@ function Home() {
       <Hero />
       <Marquee />
       {/* <Projects /> */}
-      <Reg_service />
+      {/* <Reg_service /> */}
       <Allservice />
       <Full />
       <Feedbackcr />
+      <Complainbox />
       <Faqs />
       <Footer />
     </div>

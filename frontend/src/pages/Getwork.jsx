@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./style.css";
 import axios from "axios";
-import "./getwor.css";
 import Footer from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 
@@ -33,7 +31,7 @@ function Getwork() {
       })
       .catch((error) => {
         console.log(error);
-        alert("An error occured while sending OTP. Please try again later!");
+        alert("An error occurred while sending OTP. Please try again later!");
       });
   };
 
@@ -87,139 +85,112 @@ function Getwork() {
   };
 
   return (
-    <div className="">
+    <div className="bg-gray-100">
       <Navbar />
-      <div className="main_get text-center mt-6">
-        {/* this is register page of service */}
-        <h2>Fname: </h2>
-        <input
-          type="text"
-          name="fname"
-          id="fname"
-          value={fname}
-          onChange={(e) => setFname(e.target.value)}
-        />
-        <br />
-        <br />
-        <h2>Lname: </h2>
-        <input
-          type="text"
-          name="lname"
-          id="lname"
-          value={lname}
-          onChange={(e) => setLname(e.target.value)}
-        />
-        <br />
-        <br />
-        <h2>Age(in years): </h2>
-        <input
-          type="number"
-          name="age"
-          id="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        />
-        <br />
-        <br />
-        <h2>Select your expertise</h2>
-        <select
-          name="expertise"
-          id="expertise"
-          value={expertise}
-          onChange={(e) => setExpertise(e.target.value)}
-          required
-        >
-          <option value="" disabled>
-            Select your expertise
-          </option>
-          <option value="shopstaff">Shop or Outlet Staff</option>
-          <option value="hospital Staff">Hospital Staff</option>
-          <option value="labsupport">Lab Support</option>
-          <option value="schoolstaff">School Staff</option>
-          <option value="others">Others</option>
-        </select>
-        <br />
-        <br />
-        <h2>Previous Experience</h2>
-        <input
-          type="number"
-          name="prevexperience"
-          id="prevexperience"
-          value={prevexperience}
-          onChange={(e) => setPrevexperience(e.target.value)}
-        />
-        <br />
-        <br />
-        <h2>Phone Number: </h2>
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <br />
-        <br />
-
-        <button type="button" className="" onClick={handleSendOtp}>
-          {otpSent ? "Resend OTP" : "Send OTP"}
-        </button>
-        {otpSent && (
-          <>
-            <h2>Enter OTP sent to your phone: </h2>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-            />
-            <br />
-            <br />
-            <button onClick={handleVerifyOtp}>Verify OTP</button>
-            <p>{verificationResult}</p>
-          </>
-        )}
-
-        {/* {!otpSent && (
-          <button type="button" className="buttonsub" onClick={handleSendOtp}>
-            Send OTP
+      <div className="container mx-auto py-6">
+        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold mb-4">Register as a Service Provider</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block mb-2">First Name:</label>
+              <input
+                type="text"
+                value={fname}
+                onChange={(e) => setFname(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Last Name:</label>
+              <input
+                type="text"
+                value={lname}
+                onChange={(e) => setLname(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Age (in years):</label>
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Select your expertise:</label>
+              <select
+                value={expertise}
+                onChange={(e) => setExpertise(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              >
+                <option value="" disabled>Select your expertise</option>
+                <option value="shopstaff">Shop or Outlet Staff</option>
+                <option value="hospital Staff">Hospital Staff</option>
+                <option value="labsupport">Lab Support</option>
+                <option value="schoolstaff">School Staff</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div>
+              <label className="block mb-2">Previous Experience:</label>
+              <input
+                type="number"
+                value={prevexperience}
+                onChange={(e) => setPrevexperience(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Phone Number:</label>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+              {!otpSent ? (
+                <button onClick={handleSendOtp} className="mt-2 bg-cyan-500 text-white py-2 px-4 rounded-lg">Send OTP</button>
+              ) : (
+                <div>
+                  <label className="block mt-2">Enter OTP sent to your phone:</label>
+                  <input
+                    type="text"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    className="w-full border rounded-lg px-4 py-2"
+                  />
+                  <button onClick={handleVerifyOtp} className="mt-2 bg-cyan-500 text-white py-2 px-4 rounded-lg">Verify OTP</button>
+                  <p>{verificationResult}</p>
+                </div>
+              )}
+            </div>
+            <div>
+              <label className="block mb-2">Email:</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Address:</label>
+              <textarea
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="w-full border rounded-lg px-4 py-2"
+              ></textarea>
+            </div>
+          </div>
+          <button
+            onClick={handleServiceman}
+            className="mt-4 bg-cyan-500 text-white py-2 px-4 rounded-lg hover:bg-green-600"
+          >
+            Submit
           </button>
-        )}
-
-        {otpSent && (
-          <>
-            <h2>Enter OTP sent to your phone: </h2>
-            <input type="text" name="otp" id="otp" value={otp} onChange={(e) => setOtp(e.target.value)} /> <br /><br />
-          </>
-        )}
-         <button className="buttonsub" onClick={handleVerifyOtp}>Verify OTP</button>
-        <p>{verificationResult}</p> */}
-
-        <h2>Email: </h2>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <br />
-        <h2>Address: </h2>
-        <textarea
-          name="address"
-          id="address"
-          // cols="0"
-          // rows="50"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        ></textarea>
-        <br />
-        <br />
-        <button type="submit" className="buttonsub rounded-xl px-10 py-3 bg-cyan-600 hover:bg-cyan-900 hover:text-white" onClick={handleServiceman}>
-          Submit your form
-        </button>
-        <br />
-        <br />
+        </div>
       </div>
       <Footer />
     </div>

@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Country, State, City } from "country-state-city";
 import Select from "react-select";
 
 function Info({ data, setData }) {
+  // const [latitude, setLatitude] = useState("")
+  // const [longitude, setLongitude] = useState("");
+  // useEffect(() => {
+  //   navigator.getlocation.getCurrentPosition((position) => {
+  //     setLatitude(position.coords.latitude);
+  //     setLongitude(positino.coords.longitude);
+  //   })
+  // }, [])
+
+
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);

@@ -11,7 +11,7 @@ export const Navbar = () => {
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
         {/* MaidMyDay */}
-        <img src={getImageUrl("images/logo.png")} alt="" />
+        <img src={getImageUrl("images/log.png")} alt="" />
       </a>
       <div className={styles.menu}>
         <img
@@ -28,22 +28,22 @@ export const Navbar = () => {
           className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
           onClick={() => setMenuOpen(false)}
         >
-          <li className="px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+          <li className="bg-white px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             <a href="#">About</a>
           </li>
-          <li className="px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+          <li className="bg-white px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             <a href="#">Experience</a>
           </li>
-          <li className="px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+          <li className="bg-white px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             <a href="#">Projects</a>
           </li>
-          <li className="px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+          {/* <li className="bg-white px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110"> */}
             {/* <a href="#about">Contact</a> */}
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li className="px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
+            {/* <Link to="/signup">Signup</Link> */}
+          {/* </li> */}
+          <li className="bg-white px-5 py-2 ullinav hover:bg-cyan-600 cursor-pointer rounded-xl transition-transform transform hover:scale-110">
             {/* <a href="#signup">Register</a> */}
-            <Link to="/register">FirestoreDB</Link>
+            <Link to="/register">Register Yourself here</Link>
           </li>
         </ul>
       </div>
