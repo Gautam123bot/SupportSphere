@@ -26,7 +26,7 @@ function Getwork() {
   const navigate = useNavigate();
   
   // const loader = new Loader({
-  //   apiKey: "AIzaSyAf-Nqbg1wkjwPk5nOjQgFQBDBNlTwklUE",
+  //   apiKey: "",
   //   version: "weekly",
   //   ...additionalOptions,
   // });
@@ -42,7 +42,7 @@ function Getwork() {
 
   const handleAddressAutocomplete = (query) => {
     axios
-      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=d5917d676b3c42aa943b0da41e47813f`)
+      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=${apiKey}`)
       .then((response) => {
         setAutocompleteResults(response.data.features);
       })
@@ -248,7 +248,7 @@ function Getwork() {
           >
             Submit
           </button><br /><br />
-          <Mapjs apiKey="AIzaSyAf-Nqbg1wkjwPk5nOjQgFQBDBNlTwklUE" />
+          <Mapjs apiKey="" />
           <div className="">
             {/* <Shop_addresses /> */}
           </div>

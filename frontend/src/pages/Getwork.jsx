@@ -10,6 +10,7 @@ import Shop_addresses from "../components/Maps/Shop_addresses";
 
 function Getwork() {
   const GOOGLE_JS_API=import.meta.env.VITE_GOOGLE_JS_API;
+  const autocompleteapiKey=import.meta.env.VITE_AUTOCOMPLETE;
 
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -44,7 +45,7 @@ function Getwork() {
 
   const handleAddressAutocomplete = (query) => {
     axios
-      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=d5917d676b3c42aa943b0da41e47813f`)
+      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=${autocompleteapiKey}`)
       .then((response) => {
         setAutocompleteResults(response.data.features);
       })

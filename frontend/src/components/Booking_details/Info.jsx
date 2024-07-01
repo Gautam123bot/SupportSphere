@@ -4,6 +4,7 @@ import Select from "react-select";
 import axios from "axios";
 
 function Info({ data, setData }) {
+  const autocompleteapi=import.meta.env.VITE_AUTOCOMPLETE;
   // const [latitude, setLatitude] = useState("")
   // const [longitude, setLongitude] = useState("");
   // useEffect(() => {
@@ -18,7 +19,7 @@ function Info({ data, setData }) {
 
   const handleAddressAutocomplete = (query) => {
     axios
-      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=d5917d676b3c42aa943b0da41e47813f`)
+      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=${autocompleteapi}`)
       .then((response) => {
         setAutocompleteResults(response.data.features);
       })
