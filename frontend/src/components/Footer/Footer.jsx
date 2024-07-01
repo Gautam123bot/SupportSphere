@@ -23,7 +23,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-cyan-500 text-black sticky bottom-0 left-0 w-full">
+    <footer className="bg-cyan-500 text-black sticky bottom-0 left-0 w-full mt-48">
       <div className="md:flex md:justify-between md:items-center sm:px-8 px-4 bg-[#ffffff19] py-7">
         <h1
           className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold

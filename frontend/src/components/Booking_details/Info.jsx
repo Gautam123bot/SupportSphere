@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Country, State, City } from "country-state-city";
 import Select from "react-select";
+import axios from "axios";
 
 function Info({ data, setData }) {
   // const [latitude, setLatitude] = useState("")
@@ -11,7 +12,34 @@ function Info({ data, setData }) {
   //     setLongitude(positino.coords.longitude);
   //   })
   // }, [])
+  
+  const [autocompleteResults, setAutocompleteResults] = useState([]);
+  const [address, setAddress] = useState(data.address || ""); // State for address
 
+  const handleAddressAutocomplete = (query) => {
+    axios
+      .get(`https://api.geoapify.com/v1/geocode/autocomplete?text=${query}&apiKey=d5917d676b3c42aa943b0da41e47813f`)
+      .then((response) => {
+        setAutocompleteResults(response.data.features);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleAddressChange = (event) => {
+    const { value } = event.target;
+    setAddress(value);
+    setData({ ...data, address: value });
+    handleAddressAutocomplete(value);
+  };
+
+  // Function to handle selection from autocomplete suggestions
+  const handleAutocompleteSelection = (selectedAddress) => {
+    setAddress(selectedAddress);
+    setData({ ...data, address: selectedAddress });
+    setAutocompleteResults([]); // Clear autocomplete suggestions
+  };
 
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
@@ -114,13 +142,26 @@ function Info({ data, setData }) {
           Address
         </label>
         <input
-          onChange={(e) => setData({ ...data, address: e.target.value })}
-          value={data.address}
+          onChange={handleAddressChange}
+          value={address}
           type="text"
           id="address"
           name="address"
           className="block h-14 w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
         />
+        {autocompleteResults.length > 0 && (
+          <ul className="mt-2 border rounded-lg overflow-y-auto max-h-48">
+            {autocompleteResults.map((result) => (
+              <li
+                key={result.properties.osm_id}
+                className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                onClick={() => handleAutocompleteSelection(result.properties.formatted)}
+              >
+                {result.properties.formatted}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

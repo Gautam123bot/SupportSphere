@@ -9,8 +9,6 @@ import Shops from "../components/Shop_recruit_details/Shops";
 import Shop_addresses from "../components/Maps/Shop_addresses";
 
 function Getwork() {
-  const GOOGLE_JS_API=import.meta.env.VITE_GOOGLE_JS_API;
-
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [age, setAge] = useState("");
@@ -250,7 +248,7 @@ function Getwork() {
           >
             Submit
           </button><br /><br />
-          <Mapjs apiKey={GOOGLE_JS_API} />
+          <Mapjs apiKey="AIzaSyAf-Nqbg1wkjwPk5nOjQgFQBDBNlTwklUE" />
           <div className="">
             {/* <Shop_addresses /> */}
           </div>

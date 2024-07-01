@@ -11,12 +11,14 @@ import Feedbackcr from '../components/Carousel_feedback/Feedbackcr'
 import Full from '../components/Whychooseus/Full'
 import Marquee from '../components/Marquee'
 import Complainbox from '../components/Complainbx/Complainbox'
+// import Getlatlongg from '../components/Maps/Getlatlongg'
 
 function Home() {
   return (
     <div className={styles.App}>
       <Navbar />
       <Hero />
+      {/* <Getlatlongg /> */}
       <Marquee />
       {/* <Projects /> */}
       {/* <Reg_service /> */}
