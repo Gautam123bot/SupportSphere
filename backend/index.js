@@ -44,7 +44,14 @@ app.use("/booked", bookingRouter);
 app.use("/mailed", emailRoute);
 app.use("/complain", complainRoute)
 
-
+app.get('/bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find();
+    res.status(200).json(bookings);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 
 app.get('/get-addressofservicemen/:id', async (req, res) => {
