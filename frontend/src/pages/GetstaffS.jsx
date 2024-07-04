@@ -30,7 +30,8 @@ function GetstaffS() {
       // const {username, email, password, firstName, lastName,country,state,city,  address, phone, food} = data
       e.preventDefault();
       try {
-        await axios.post("http://localhost:3001/booked", data)
+        // await axios.post("http://localhost:3001/booked", data)
+        await axios.post("https://support-sphere-backend.vercel.app/booked", data)
           // username,
           // email,
           // password, 

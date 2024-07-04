@@ -68,7 +68,8 @@ function Getwork() {
 
   const handleSendOtp = () => {
     axios
-      .post("http://localhost:3001/api/send-otp", { phone })
+      // .post("http://localhost:3001/api/send-otp", { phone })
+      .post("https://support-sphere-backend.vercel.app/api/send-otp", { phone })
       .then(() => {
         setOtpSent(true);
         setVerificationResult(""); // Reset verification result
