@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const bookingSchema = new Schema({
-  // username: String,
   services: {
     type: String,
     required: true,
@@ -12,13 +11,17 @@ const bookingSchema = new Schema({
     required: true,
     default: 1,
   },
+  startdate: {
+    type: Date,
+    required: true,
+  },
   starttime: {
     type: String,
-    default: 10,
+    default: "10:00",
   },
   endtime: {
     type: String,
-    default: 8,
+    default: "20:00",
   },
   notes: {
     type: String,
@@ -44,23 +47,12 @@ const bookingSchema = new Schema({
   },
   city: {
     type: String,
-    requried: true,
+    required: true,
   },
   address: {
     type: String,
     required: true,
   }
-
-  // email: String,
-  // password: String,
-  // firstName: String,
-  // lastName: String,
-  // country: String, 
-  // state: String, 
-  // city: String,
-  // address: String,
-  // phone: String,
-  // food: String,
 });
 
 const Booking = mongoose.model("Booking", bookingSchema);

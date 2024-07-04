@@ -15,6 +15,7 @@ function Getstaff() {
   const [data, setData] = useState({
     services: '',
     noofstaff: '',
+    startdate: '',
     starttime: '',
     endtime: '',
     notes: '',
