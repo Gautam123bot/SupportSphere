@@ -94,7 +94,7 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-connectMongoDb("mongodb://127.0.0.1:27017/serviceuser").then(()=>{
+connectMongoDb(process.env.MONGOD_URL).then(()=>{
   console.log("Mongodb connected!")
 }).catch(err=>{
   console.log("MongoDB connection error: ", err);
