@@ -84,7 +84,7 @@ function Getwork() {
 
   const handleVerifyOtp = () => {
     axios
-      .post("https://support-sphere.vercel.app/api/verify-otp", { phone, otp })
+      .post("https://support-sphere-backend.vercel.app/api/verify-otp", { phone, otp })
       // .post("http://localhost:3001/api/verify-otp", { phone, otp })
       .then((response) => {
         console.log("Response from server:", response.data);
@@ -121,7 +121,7 @@ function Getwork() {
       address,
     };
     axios
-      .post("https://support-sphere.vercel.app/service", data)
+      .post("https://support-sphere-backend.vercel.app/service", data)
       // .post("http://localhost:3001/service", data)
       .then(() => {
         navigate("/");
