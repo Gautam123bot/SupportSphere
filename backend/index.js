@@ -13,20 +13,13 @@ import Booking from './models/booking.js';
 // import twilioRouter from "./routes/servicemen.js"
 import axios from "axios";
 
-
 const app = express();
 
 // Middleware
 app.use(express.json());
-// app.use(cors({
-  //   origin: "http://localhost:5173",
-  //   methods: ['GET', 'POST'],
-//   allowedHeaders: ['Content-Type'],
-// }));
 
 // CORS configuration
 const corsOptions = {
-  // origin: "http://localhost:5173", // Allow requests from this origin
   origin: "https://support-sphere.vercel.app", // Allow requests from this origin
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
@@ -43,7 +36,7 @@ app.use('/service', servicemenRouter);
 app.use("/api", userRoute);
 app.use("/booked", bookingRouter);
 app.use("/mailed", emailRoute);
-app.use("/complain", complainRoute)
+app.use("/complain", complainRoute);
 
 app.get('/bookings', async (req, res) => {
   try {
@@ -54,7 +47,6 @@ app.get('/bookings', async (req, res) => {
   }
 });
 
-
 app.get('/get-addressofservicemen/:id', async (req, res) => {
   try {
     const doc = await ServiceMan.findById(req.params.id);
@@ -63,7 +55,7 @@ app.get('/get-addressofservicemen/:id', async (req, res) => {
     }
     const address_staff = doc.address;
     // Send the address field as a response
-    res.json({ address: address_staff});
+    res.json({ address: address_staff });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -94,16 +86,15 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-connectMongoDb("mongodb://127.0.0.1:27017/serviceuser").then(()=>{
-  console.log("Mongodb connected!")
-}).catch(err=>{
+connectMongoDb("mongodb://127.0.0.1:27017/serviceuser").then(() => {
+  console.log("Mongodb connected!");
+}).catch(err => {
   console.log("MongoDB connection error: ", err);
   process.exit(1);
-})
+});
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
-  // console.error(err.stack);
   res.status(500).send('Something broke!');
   next();
 });
