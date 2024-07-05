@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import axios from "axios";
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Complainbox() {
+
   const [yname, setYname] = useState("");
   const [phone, setPhone] = useState("");
   const [staffId, setStaffId] = useState("");
   const [staffName, setStaffName] = useState("");
   const [reason, setReason] = useState("");
+
   const navigate = useNavigate();
 
   const handleComplainbox = () => {
+    
     const data = {
       yname,
       phone,
@@ -18,25 +22,22 @@ function Complainbox() {
       staffName,
       reason,
     };
-
-    axios.post("https://support-sphere-backend.vercel.app/complain", data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+  axios
+    .post("https://support-sphere-backend.vercel.app/complain", data)
+    // .post("http://localhost:3001/complain", data)
     .then(() => {
-      const chk = window.confirm("Check the confidentials you entered!!!");
-      if (chk) {
-        alert("Your complaint has been registered successfully! We will reach back to you soon");
-        navigate("/");
+      navigate("/");
+      const chk = window.confirm("Check the confidentials you entererd!!!");
+      if(chk){
+        alert("Your complaint has been registered successfully! We will reach back to you soon")
       }
     })
     .catch((error) => {
       console.log(error);
       alert("An error happened. Please try again later...");
-    });
+    })
   }
-
+  
   return (
     <div className="bg-cyan-500 p-4 md:p-8 mx-auto max-w-2xl mb-24 rounded-xl">
       <h1 className="text-xl font-bold mb-4">
@@ -63,7 +64,9 @@ function Complainbox() {
         <div className="flex flex-col">
           <label className="text-lg font-semibold">Reason for the complaint:</label>
           <select id="reason" name="reason" value={reason} onChange={(e) => setReason(e.target.value)} className="border shadow border-black rounded-md px-4 py-2 bg-white">
-            <option value="" disabled>Select your complain type</option>
+          <option value="" disabled>
+            Select your complain type
+          </option>
             <option value="late">Lack of punctuality</option>
             <option value="behaviour">Inappropriate or Obscene behaviour</option>
             <option value="money">Demand of extra money</option>
@@ -73,9 +76,7 @@ function Complainbox() {
         </div>
       </div>
       <div className="buttonsubmit text-center mt-10">
-        <button type="submit" className='px-4 py-2 font-bold bg-black text-white rounded-full mt-auto hover:bg-white hover:text-black transition duration-300' onClick={handleComplainbox}>
-          Click here to submit
-        </button>
+        <button type="submit" className='px-4 py-2 font-bold bg-black text-white rounded-full mt-auto hover:bg-white hover:text-black transition duration-300' onClick={handleComplainbox}>Click here to submit</button>
       </div>
     </div>
   );
