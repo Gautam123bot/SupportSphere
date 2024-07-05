@@ -94,33 +94,6 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-// async function calculateDistance(){
-//   try {
-//     const apiKey = process.env.GOOGLE_API_KEY;
-//     const deliveryAddress = address_booking
-//     const vendorAddress = address_staff
-//     const appUrl = "https://maps.google.com/maps/api/distancematrix/json?units=imperial&origins=${vendorAddress}&destinations=${deliveryAddress}&key=${apiKey}";
-//     const response = await axios.get(apiUrl);
-//     console.log(response.data);
-//     console.log(response.data.rows[0].elements);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-
-
-
-// app.use("/sms", twilioRouter)
-
-// MongoDB Connection
-// mongoose.connect(mongoDBURL).then(() => {
-//   console.log("MongoDB connected!");
-// }).catch(err => {
-//   console.error("MongoDB connection error:", err);
-//   process.exit(1); // Exit the process if MongoDB connection fails
-// });
-
 connectMongoDb("mongodb://127.0.0.1:27017/serviceuser").then(()=>{
   console.log("Mongodb connected!")
 }).catch(err=>{
