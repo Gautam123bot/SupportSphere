@@ -1,16 +1,15 @@
 import express from 'express';
-import { PORT, mongoDBURL } from './config.js';
-import mongoose from 'mongoose';
-import servicemenRouter from "./routes/servicemen.js"; 
-import bookingRouter from "./routes/booking.js";
-import emailRoute from "./routes/emailRoute.js";
-import userRoute from "./routes/userRoute.js";
 import cors from 'cors';
+import { PORT, mongoDBURL } from './config.js';
 import connectMongoDb from './connection.js';
-import complainRoute from "./routes/complainRoute.js";
+import servicemenRouter from './routes/servicemen.js'; 
+import bookingRouter from './routes/booking.js';
+import emailRoute from './routes/emailRoute.js';
+import userRoute from './routes/userRoute.js';
+import complainRoute from './routes/complainRoute.js';
 import ServiceMan from './models/servicemen.js';
 import Booking from './models/booking.js';
-import axios from "axios";
+import axios from 'axios';
 
 const app = express();
 
@@ -20,7 +19,7 @@ app.use(express.json());
 // CORS configuration
 const corsOptions = {
   origin: "https://support-sphere.vercel.app",
-  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true,
 };
