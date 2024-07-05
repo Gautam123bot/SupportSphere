@@ -19,16 +19,21 @@ app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://support-sphere.vercel.app", // Allow requests from this origin
-  methods: ['GET', 'POST'],
+  origin: "https://support-sphere.vercel.app",
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
+  credentials: true,
 };
+
 app.use(cors(corsOptions));
 
-// Custom Middleware to ensure CORS headers are set
+// Middleware to handle preflight requests
+app.options('*', cors(corsOptions));
+
+// Ensure CORS headers are set for every response
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://support-sphere.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
@@ -60,7 +65,6 @@ app.get('/get-addressofservicemen/:id', async (req, res) => {
       return res.status(404).json({ error: 'Document not found' });
     }
     const address_staff = doc.address;
-    // Send the address field as a response
     res.json({ address: address_staff });
   } catch (error) {
     console.error(error);
@@ -75,7 +79,6 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
       return res.status(404).json({ error: 'Document not found' });
     }
     const address_booking = doc.address;
-    // Send the address field as a response
     res.json({ address: address_booking });
 
     // Calculate distance
