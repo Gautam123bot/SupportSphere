@@ -9,7 +9,8 @@ function Shops() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/bookings");
+        const response = await axios.get("https://support-sphere.vercel.app/bookings");
+        // const response = await axios.get("http://localhost:3001/bookings");
         setBookings(response.data);
         setLoading(false);
       } catch (error) {
