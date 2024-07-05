@@ -27,9 +27,10 @@ app.use(express.json());
 // CORS configuration
 const corsOptions = {
   // origin: "http://localhost:5173", // Allow requests from this origin
-  origin: "https://support-sphere.vercel.app", // Allow requests from this origin
-  methods: ['GET', 'POST'],
+  origin: ["https://support-sphere.vercel.app"], // Allow requests from this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
+  credentials: true,
 };
 app.use(cors(corsOptions));
 
