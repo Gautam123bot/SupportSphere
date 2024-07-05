@@ -2,15 +2,14 @@ import express from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import servicemenRouter from "./routes/servicemen.js"; 
-import bookingRouter from "./routes/booking.js"
-import emailRoute from "./routes/emailRoute.js"
-import userRoute from "./routes/userRoute.js"
+import bookingRouter from "./routes/booking.js";
+import emailRoute from "./routes/emailRoute.js";
+import userRoute from "./routes/userRoute.js";
 import cors from 'cors';
 import connectMongoDb from './connection.js';
-import complainRoute from "./routes/complainRoute.js"
+import complainRoute from "./routes/complainRoute.js";
 import ServiceMan from './models/servicemen.js';
 import Booking from './models/booking.js';
-// import twilioRouter from "./routes/servicemen.js"
 import axios from "axios";
 
 const app = express();
@@ -26,9 +25,16 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+// Custom Middleware to ensure CORS headers are set
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://support-sphere.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 // Routes
 app.get('/', (req, res) => {
-  console.log(req);
   return res.status(200).send('Welcome To MERN Stack Tutorial');
 });
 
@@ -86,7 +92,7 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-connectMongoDb("mongodb://127.0.0.1:27017/serviceuser").then(() => {
+connectMongoDb(mongoDBURL).then(() => {
   console.log("Mongodb connected!");
 }).catch(err => {
   console.log("MongoDB connection error: ", err);
