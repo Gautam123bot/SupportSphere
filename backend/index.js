@@ -18,11 +18,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+// app.use(cors({
+//     origin: "http://localhost:5173",
+//     methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type'],
+// }));
 
 // CORS configuration
 // const corsOptions = {
@@ -32,6 +32,19 @@ app.use(cors({
 //   credentials: true,
 // };
 // app.use(cors(corsOptions));
+
+const allowedOrigins = [
+  'https://support-sphere.vercel.app', // Add your production frontend URL
+  'http://localhost:5173', // Add your local development URL
+];
+
+const corsOptions = {
+  origin: allowedOrigins,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies to be sent across origins
+};
+
+app.use(cors(corsOptions));
 
 // Routes
 app.get('/', (req, res) => {

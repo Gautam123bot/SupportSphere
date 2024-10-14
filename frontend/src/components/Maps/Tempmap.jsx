@@ -51,7 +51,7 @@ function Tempmap ({ apiKey }) {
   useEffect(() => {
     const getAddresses = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/bookings");
+        const response = await axios.get("https://support-sphere-backend.vercel.app/bookings");
         const addresses = response.data.map((booking) => booking.address);
         setAddresses(addresses);
         setLoading(false);

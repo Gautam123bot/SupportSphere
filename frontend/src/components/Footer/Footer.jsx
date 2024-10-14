@@ -14,7 +14,7 @@ function Footer() {
     
     try {
       // Make a POST request to the server-side endpoint
-      const response = await axios.post('http://localhost:3001/mailed', { email });
+      const response = await axios.post('https://support-sphere-backend.vercel.app/mailed', { email });
       alert("You Subscribed successfully!")
       console.log(response.data.message);
     } catch (error) {
