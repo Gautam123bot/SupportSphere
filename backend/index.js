@@ -18,20 +18,20 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-// app.use(cors({
-  //   origin: "http://localhost:5173",
-  //   methods: ['GET', 'POST'],
-//   allowedHeaders: ['Content-Type'],
-// }));
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 
 // CORS configuration
-const corsOptions = {
-  // origin: "http://localhost:5173", // Allow requests from this origin
-  origin: ["https://support-sphere.vercel.app"], // Allow requests from this origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   // origin: "http://localhost:5173", // Allow requests from this origin
+//   origin: ["https://support-sphere.vercel.app"], // Allow requests from this origin
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
 
 // Routes
 app.get('/', (req, res) => {
@@ -94,7 +94,7 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-connectMongoDb(process.env.MONGOD_URL).then(()=>{
+connectMongoDb(process.env.DBURL).then(()=>{
   console.log("Mongodb connected!")
 }).catch(err=>{
   console.log("MongoDB connection error: ", err);
