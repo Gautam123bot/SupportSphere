@@ -60,6 +60,7 @@ app.use("/complain", complainRoute)
 
 app.get('/bookings', async (req, res) => {
   try {
+    console.log("getting your books in a while...")
     const bookings = await Booking.find();
     res.status(200).json(bookings);
   } catch (error) {
@@ -107,7 +108,7 @@ app.get('/get-addressofbooking/:id', async (req, res) => {
   }
 });
 
-connectMongoDb(process.env.DBURL).then(()=>{
+connectMongoDb("mongodb://localhost:27017/serviceuser" || process.env.DBURL).then(()=>{
   console.log("Mongodb connected!")
 }).catch(err=>{
   console.log("MongoDB connection error: ", err);
